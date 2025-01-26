@@ -30,6 +30,7 @@ def maxOperations(nums: List[int], k: int) -> int:
             nums_map[num] -= 1
             nums_map[k - num] -= 1
     return operations
+
 case1 = [1,2,3,4]
 case2 = [3,1,3,4,3]
 print(maxOperations(case1, 5)) 
