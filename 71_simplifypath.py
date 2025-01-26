@@ -11,17 +11,17 @@ def simplifyPath(path: str) -> str:
     for i in path:
         if i == "":
             continue
-        elif i == ".." or i == ".":
+        elif i == "..":
             while res and res[-1] != "/":
                 res = res[:-1]
             res = res[:-1]
             continue
+        elif i == '.':
+            continue
         text = "/" + i
         res += text
-
     if res == "":
         return "/"
-    
     return res
 
 case1 = "/home/"
