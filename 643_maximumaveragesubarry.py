@@ -3,7 +3,7 @@ def findMaxAverage(nums, k):
     max_sum = sum(nums[l:r])
     cur_sum = max_sum
     while r < len(nums):
-        cur_sum = sum(nums[l:r])
+        cur_sum += nums[r] - nums[l]
         if cur_sum > max_sum:
             max_sum = cur_sum
         l += 1

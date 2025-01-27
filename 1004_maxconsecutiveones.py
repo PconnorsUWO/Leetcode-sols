@@ -24,5 +24,5 @@ def longestOnes(nums, k):
 
 case1 = [[1,1,1,1,1,1,1,0,0,0,1,1,1,1,0], 2]
 case2 = [[0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1], 3]
-print(longestOnes(*case1)) # 6
+print(longestOnes(*case1)) # 9
 print(longestOnes(*case2)) # 10
