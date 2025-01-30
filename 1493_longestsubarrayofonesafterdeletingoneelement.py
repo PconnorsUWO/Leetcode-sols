@@ -13,7 +13,6 @@ def longestSubarray(nums: List[int]) -> int:
                 zero_count -= 1
             left += 1
 
-        # Update max_len. We subtract 1 to account for the deletion.
         current_window_length = right - left
         max_len = max(max_len, current_window_length)
 
