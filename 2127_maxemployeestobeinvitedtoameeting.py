@@ -30,7 +30,7 @@ def maximumInvitations(favorite: List[int]) -> int:
     if max_people == 2:
         return len(transpositions)*2 + 1
     return max_people
-
+ 
  
 
 # Input: favorite = [2,2,1,2]

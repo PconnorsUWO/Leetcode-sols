@@ -1,6 +1,6 @@
 from typing import List
 def fourSum(nums: List[int], target: int) -> List[List[int]]:
-    nums.sort() 
+    nums.sort()  # Sort the array to handle duplicates and use two-pointer
     n = len(nums)
     res = []
     
@@ -8,22 +8,46 @@ def fourSum(nums: List[int], target: int) -> List[List[int]]:
         if i > 0 and nums[i] == nums[i - 1]:
             continue
         
+        if nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3] > target:
+            break
+        
+        if nums[i] + nums[n - 3] + nums[n - 2] + nums[n - 1] < target:
+            continue
+        
         for j in range(i + 1, n - 2):
             if j > i + 1 and nums[j] == nums[j - 1]:
                 continue
             
-            for k in range(j + 1, n - 1):
-                if k > j + 1 and nums[k] == nums[k - 1]:
-                    continue
+            if nums[i] + nums[j] + nums[j + 1] + nums[j + 2] > target:
+                break
+            
+            if nums[i] + nums[j] + nums[n - 2] + nums[n - 1] < target:
+                continue
+            
+            left = j + 1
+            right = n - 1
+            
+            while left < right:
+                total = nums[i] + nums[j] + nums[left] + nums[right]
                 
-                for l in range(k + 1, n):
-                    if l > k + 1 and nums[l] == nums[l - 1]:
-                        continue
+                if total == target:
+                    res.append([nums[i], nums[j], nums[left], nums[right]])
                     
-                    total = nums[i] + nums[j] + nums[k] + nums[l]
-                    if total == target:
-                        res.append([nums[i], nums[j], nums[k], nums[l]])
+                    while left < right and nums[left] == nums[left + 1]:
+                        left += 1
+                    while left < right and nums[right] == nums[right - 1]:
+                        right -= 1
+                    
+                    left += 1
+                    right -= 1
+                
+                elif total < target:
+                    left += 1
+                else:
+                    right -= 1  
+    
     return res
+
 
 # Input: nums = [1,0,-1,0,-2,2], target = 0
 # Output: [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]
