@@ -16,6 +16,7 @@ def generateParenthesis(n: int) -> List[str]:
     backtrack(s, 0, 0)
     return res
 
+# O(4^n/sqrt(n)) time complexity, where n is the input n
 # Example 1:
 
 # Input: n = 3
