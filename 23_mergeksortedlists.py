@@ -11,21 +11,14 @@ class SelfSortingLinkedList:
         self.head = None
 
     def add(self, node):
-        """
-        Inserts 'node' into the linked list in ascending order based on 'node.val'.
-        Ensures node.next = None before insertion to avoid pointer corruption.
-        """
         node.next = None
-        
         if not self.head:
             self.head = node
             return
-
         if node.val < self.head.val:
             node.next = self.head
             self.head = node
             return
-        
         cur = self.head
         while cur:
             if not cur.next:
