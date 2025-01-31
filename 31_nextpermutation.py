@@ -1,4 +1,6 @@
 from typing import List
+import statistics as st
+
 class Solution:
     def nextPermutation(self, nums: List[int]) -> None:
         """
@@ -46,4 +48,4 @@ print(case1[0+1:])
 case2 = [1,1,5,3,6]
 Solution.nextPermutation(Solution,case2)
 print(case2)
- 
+
