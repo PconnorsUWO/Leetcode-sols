@@ -1,5 +1,4 @@
 from collections import Counter
-import math
 def equalDigitFrequency(s):
     unique_substrings = set()
     

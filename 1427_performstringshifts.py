@@ -1,13 +1,14 @@
 def stringShift(s,shift):
+    N = len(s)
     def shift_right(s, shift):
         return s[-shift:] + s[:-shift]
     def shift_left(s, shift):
         return s[shift:] + s[:shift]
     for direction, amount in shift:
         if direction == 0:
-            s = shift_left(s, amount)
+            s = shift_left(s, amount%N)
         else:
-            s = shift_right(s, amount)
+            s = shift_right(s, amount%N)
     return s
 
 
