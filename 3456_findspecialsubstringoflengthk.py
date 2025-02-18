@@ -1,4 +1,3 @@
-from pandas import groupby  
 def q1(s,k):
     return any(len(list(grp)) == k for _, grp in groupby(s))
 
