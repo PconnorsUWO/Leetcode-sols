@@ -1,4 +1,4 @@
-from collections import defaultdict
+from collections import defaultdicts
 def lengthOfLongestSubstringTwoDistinct(s: str) -> int:
     n = len(s)
     if n < 3:
