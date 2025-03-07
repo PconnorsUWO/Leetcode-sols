@@ -13,7 +13,7 @@ def distinct_numbers(nums: List[int], k: int) -> List[int]:
         cur_val = nums[i]
         if cur_val in val_dict:
             if i - val_dict[cur_val] + 1 > k:
-                val_dict[cur_val] = i
+                val_dict.
                 res.append(res[-1])
             else:
                 val_dict[cur_val] = i

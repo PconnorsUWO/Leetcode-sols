@@ -5,8 +5,12 @@ def shortestWordDistance(wordsDict: List[str], word1: str, word2: str) -> int:
     word2_index = -1
     N = len(wordsDict)
     min_range = N
+    same_word = False
+    if word1 == word2:
+        same_word = True
     for i in range(N):
         if wordsDict[i] == word1:
+            if same_word:
             word1_index = i
         if wordsDict[i] == word2 and i != word1_index:
             word2_index = i
@@ -18,3 +22,7 @@ def shortestWordDistance(wordsDict: List[str], word1: str, word2: str) -> int:
 # Output: 3
 case1 = [["practice", "makes", "perfect", "coding", "makes"],"makes","makes"]
 print(shortestWordDistance(*case1))
+
+# 13 15 17
+# red green blue
+# 12 14 19
